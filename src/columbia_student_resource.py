@@ -11,17 +11,17 @@ class ColumbiaStudentResource:
     @staticmethod
     def _get_connection():
 
-        usr = os.environ.get("DBUSER")
-        pw = os.environ.get("DBPW")
-        h = os.environ.get("DBHOST")
-
-        conn = pymysql.connect(
-            user=usr,
-            password=pw,
-            host=h,
-            cursorclass=pymysql.cursors.DictCursor,
-            autocommit=True
-        )
+        # usr = os.environ.get("DBUSER")
+        # pw = os.environ.get("DBPW")
+        # h = os.environ.get("DBHOST")
+        #
+        # conn = pymysql.connect(
+        #     user=usr,
+        #     password=pw,
+        #     host=h,
+        #     cursorclass=pymysql.cursors.DictCursor,
+        #     autocommit=True
+        # )
 
         # conn = pymysql.connect(
         #     host="localhost",
@@ -31,6 +31,15 @@ class ColumbiaStudentResource:
         #     cursorclass=pymysql.cursors.DictCursor,
         #     autocommit=True
         # )
+
+        conn = pymysql.connect(
+            host="yw3912.cvjaygaiwg1r.us-east-1.rds.amazonaws.com",
+            port=3306,
+            user="admin",
+            password="dbuserdbuser",
+            cursorclass=pymysql.cursors.DictCursor,
+            autocommit=True
+        )
 
         return conn
 
